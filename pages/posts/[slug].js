@@ -1,5 +1,7 @@
 import { client } from '../../lib/contentful';
 import Image from 'next/image';
+import Head from 'next/head';
+import Button from '../../components/Button';
 
 export async function getStaticPaths() {
   const res = await client.getEntries({ content_type: 'portfolioPosts' });
@@ -44,26 +46,28 @@ export default function PostPage({
   disciplines,
   weblink,
   content,
-  thumbnailUrl,
-  thumbnailAlt,
-  thumbnailWidth,
-  thumbnailHeight,
 }) {
   return (
     <>
+      <Head>
+        <title>{title}</title>
+        <meta name='description' content={description} />
+      </Head>
       <div>
         <h1>{title}</h1>
-        <Image
-          src={thumbnailUrl}
-          alt={thumbnailAlt}
-          width={thumbnailWidth}
-          height={thumbnailHeight}
-        />
         <p>{description}</p>
-        <p>Disciplines: {disciplines.join(', ')}</p>
         <p>
-          Web Link: <a href={weblink}>{weblink}</a>
+          {disciplines.map((discipline) => (
+            <span
+              key={discipline}
+              className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2'
+            >
+              {discipline}
+            </span>
+          ))}
         </p>
+        {weblink && <Button href={weblink} />}
+
         <div dangerouslySetInnerHTML={{ __html: content }} />
       </div>
     </>
