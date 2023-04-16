@@ -1,4 +1,3 @@
-'use client';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -17,29 +16,27 @@ const Nav = () => {
           <div className='flex'>
             <ul className='flex space-x-8 items-center'>
               <li>
-                <Link legacyBehavior href='/' passHref>
-                  <a
-                    className={
-                      router.pathname === '/'
-                        ? 'active'
-                        : 'text-slate-800 dark:text-slate-100 hover:text-slate-400'
-                    }
-                  >
-                    Home
-                  </a>
+                <Link
+                  className={
+                    router.pathname === '/'
+                      ? 'active'
+                      : 'text-slate-800 dark:text-slate-100 hover:text-slate-400'
+                  }
+                  href='/'
+                >
+                  Home
                 </Link>
               </li>
               <li>
-                <Link legacyBehavior href='/about' passHref>
-                  <a
-                    className={
-                      router.pathname === '/about'
-                        ? 'active'
-                        : 'text-slate-800 dark:text-slate-100 hover:text-slate-400'
-                    }
-                  >
-                    About
-                  </a>
+                <Link
+                  className={
+                    router.pathname === '/about'
+                      ? 'active'
+                      : 'text-slate-800 dark:text-slate-100 hover:text-slate-400'
+                  }
+                  href='/about'
+                >
+                  About
                 </Link>
               </li>
               {/* <li>
