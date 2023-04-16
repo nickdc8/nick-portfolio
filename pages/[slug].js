@@ -34,7 +34,7 @@ export default function Page({ title, content }) {
         <title>{title}</title>
       </Head>
       <h1 className='text-4xl font-bold mb-5'>{title}</h1>
-      <p className='text-slate-200 text-2xl leading-relaxed body-text'>
+      <p className='dark:text-slate-200 text-2xl leading-relaxed body-text'>
         {content}
       </p>
     </div>
