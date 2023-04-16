@@ -28,7 +28,10 @@ export default function Home({ heroTitle, posts }) {
       </div>
       <div>
         {posts.map((post) => (
-          <a href={`/posts/${post.fields.slug}`} key={post.sys.id}>
+          <a
+            href={`/posts/${encodeURIComponent(post.fields.slug)}`}
+            key={post.sys.id}
+          >
             <div>
               <h2>{post.fields.title}</h2>
               <Image
