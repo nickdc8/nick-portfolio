@@ -19,15 +19,16 @@ export async function getStaticProps({ params }) {
 
   const post = res.items[0];
 
-  // Ensure that the `content` field is defined
+  // Ensure that the `content` and `weblink` fields are defined
   const content = post.fields.content || '';
+  const weblink = post.fields.weblink || null;
 
   return {
     props: {
       title: post.fields.title,
       description: post.fields.description,
       disciplines: post.fields.disciplines,
-      weblink: post.fields.weblink,
+      weblink: weblink,
       content: content,
       thumbnailUrl: `https:${post.fields.thumbnail.fields.file.url}`,
       thumbnailAlt: post.fields.thumbnail.fields.title,
