@@ -30,10 +30,10 @@ const Nav = () => {
                 </Link>
               </li>
               <li>
-                <Link legacyBehavior href='/' passHref>
+                <Link legacyBehavior href='/about' passHref>
                   <a
                     className={
-                      router.pathname === '/'
+                      router.pathname === '/about'
                         ? 'active'
                         : 'text-slate-800 dark:text-slate-100 hover:text-slate-400'
                     }
@@ -42,7 +42,7 @@ const Nav = () => {
                   </a>
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link legacyBehavior href='/contact' passHref>
                   <a
                     className={
@@ -54,7 +54,7 @@ const Nav = () => {
                     Contact
                   </a>
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>

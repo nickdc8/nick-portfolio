@@ -21,9 +21,9 @@ export async function getStaticProps({ params }) {
 
   const post = res.items[0];
 
-  // Ensure that the `content` and `weblink` fields are defined
-  const content = post.fields.content || '';
-  const weblink = post.fields.weblink || null;
+  const weblink = post.fields.weblink ?? null;
+
+  // const gallery = post.fields.gallery?.['en-US'] ?? null;
 
   return {
     props: {
@@ -31,7 +31,7 @@ export async function getStaticProps({ params }) {
       description: post.fields.description,
       disciplines: post.fields.disciplines,
       weblink: weblink,
-      content: content,
+      gallery: post.fields.gallery,
       thumbnailUrl: `https:${post.fields.thumbnail.fields.file.url}`,
       thumbnailAlt: post.fields.thumbnail.fields.title,
       thumbnailWidth: post.fields.thumbnail.fields.file.details.image.width,
@@ -45,31 +45,49 @@ export default function PostPage({
   description,
   disciplines,
   weblink,
-  content,
+  gallery,
 }) {
   return (
-    <>
+    <div className='mt-20'>
       <Head>
         <title>{title}</title>
         <meta name='description' content={description} />
       </Head>
-      <div>
-        <h1>{title}</h1>
-        <p>{description}</p>
-        <p>
-          {disciplines.map((discipline) => (
-            <span
-              key={discipline}
-              className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2'
-            >
-              {discipline}
-            </span>
-          ))}
-        </p>
-        {weblink && <Button href={weblink} />}
-
-        <div dangerouslySetInnerHTML={{ __html: content }} />
+      <div className='md:flex mb-10 gap-8'>
+        <div className='md:w-1/3'>
+          <div className='uppercase text-sm font-medium'>Client</div>
+          <h1 className='mb-2 text-xl font-bold'>{title}</h1>
+          <p>
+            {disciplines.map((discipline) => (
+              <span
+                key={discipline}
+                className='text-xs tracking-wide font-semibold uppercase text-slate-300 bg-gray-800 dark:bg-gray-900  px-2 py-1 rounded-md mr-2 mb-3'
+              >
+                {discipline}
+              </span>
+            ))}
+          </p>
+          {weblink && <Button href={weblink} />}
+        </div>
+        <div className='md:w-3/4 mt-8 md:mt-0 text-lg leading-relaxed'>
+          {description}
+        </div>
       </div>
-    </>
+
+      {/* Render the images from the `gallery` field */}
+      <div className='flex flex-wrap -mx-4'>
+        {gallery &&
+          gallery.map((image) => (
+            <div key={image.sys.id} className='px-4 mb-6'>
+              <Image
+                src={`https:${image.fields.file.url}`}
+                alt={image.fields.description || ''}
+                width={image.fields.file.details.image.width}
+                height={image.fields.file.details.image.height}
+              />
+            </div>
+          ))}
+      </div>
+    </div>
   );
 }
