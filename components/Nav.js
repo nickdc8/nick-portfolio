@@ -30,7 +30,7 @@ const Nav = () => {
               <li>
                 <Link
                   className={
-                    router.pathname === '/about'
+                    router.pathname === '/[slug]'
                       ? 'active'
                       : 'text-slate-800 dark:text-slate-100 hover:text-slate-400'
                   }
@@ -39,19 +39,6 @@ const Nav = () => {
                   About
                 </Link>
               </li>
-              {/* <li>
-                <Link legacyBehavior href='/contact' passHref>
-                  <a
-                    className={
-                      router.pathname === '/contact'
-                        ? 'active'
-                        : 'text-slate-800 dark:text-slate-100 hover:text-slate-400'
-                    }
-                  >
-                    Contact
-                  </a>
-                </Link>
-              </li> */}
             </ul>
           </div>
         </div>
