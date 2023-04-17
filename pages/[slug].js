@@ -1,5 +1,19 @@
 import { client } from '../lib/contentful';
 import Head from 'next/head';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { INLINES } from '@contentful/rich-text-types';
+
+const options = {
+  renderNode: {
+    [INLINES.HYPERLINK]: (node, children) => {
+      return (
+        <a href={node.data.uri} className='my-anchor-class'>
+          {children}
+        </a>
+      );
+    },
+  },
+};
 
 export async function getStaticPaths() {
   const res = await client.getEntries({ content_type: 'pages' });
@@ -22,12 +36,12 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       title: page.fields.title,
-      content: page.fields.content,
+      pageContent: page.fields.pageContent,
     },
   };
 }
 
-export default function Page({ title, content }) {
+export default function Page({ title, content, pageContent }) {
   return (
     <div className='mt-20 max-w-3xl'>
       <Head>
@@ -37,6 +51,9 @@ export default function Page({ title, content }) {
       <p className='dark:text-slate-200 text-2xl leading-relaxed body-text'>
         {content}
       </p>
+      <div className='dark:text-slate-200 text-2xl leading-relaxed body-text'>
+        {documentToReactComponents(pageContent, options)}
+      </div>
     </div>
   );
 }

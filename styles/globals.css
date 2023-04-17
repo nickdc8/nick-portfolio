@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+.my-anchor-class {
+  color: #64748b;
+}
+
+.my-anchor-class:hover {
+  color: #94a3b8;
+}
+
 .body-text p {
   margin-bottom: 24px;
 }
