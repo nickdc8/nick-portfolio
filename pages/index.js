@@ -51,7 +51,7 @@ export default function Home({ heroTitle, posts }) {
                 height={post.fields.thumbnail.fields.file.details.image.height}
                 className='rounded-md rounded-b-none'
                 placeholder='blur'
-                blurDataURL={`https:${post.fields.thumbnailBlurHash}`}
+                blurDataURL={post.fields.thumbnailBlurHash}
               />
               <div className='bg-slate-300 dark:bg-slate-700 p-4 rounded-md rounded-t-none'>
                 <h2 className='font-extrabold'>{post.fields.title}</h2>
