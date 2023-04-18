@@ -8,7 +8,10 @@ export async function getStaticProps() {
     limit: 1,
   });
 
-  const postRes = await client.getEntries({ content_type: 'portfolioPosts' });
+  const postRes = await client.getEntries({
+    content_type: 'portfolioPosts',
+    order: '-fields.published', // sort by published field in descending order
+  });
 
   return {
     props: {
@@ -25,7 +28,10 @@ export default function Home({ heroTitle, posts }) {
       <div>
         <Head>
           <title>Portfolio</title>
-          <meta name='description' content='This is a description of my page' />
+          <meta
+            name='description'
+            content='Designer and Front-End Developer with a creative approach to web development. From branding to motion design, I specialize in crafting visually stunning designs and effective user interfaces.'
+          />
         </Head>
         <h1 className='text-5xl font-extrabold lg:w-3/4 w-full my-20 leading-tight'>
           {heroTitle}
