@@ -33,7 +33,7 @@ export default function Home({ heroTitle, posts }) {
             content='Designer and Front-End Developer with a creative approach to web development. From branding to motion design, I specialize in crafting visually stunning designs and effective user interfaces.'
           />
         </Head>
-        <h1 className='text-5xl font-extrabold lg:w-3/4 w-full my-20 leading-tight'>
+        <h1 className='text-5xl text-slate-900 dark:text-slate-200 font-extrabold lg:w-3/4 w-full my-20 leading-tight'>
           {heroTitle}
         </h1>
       </div>
@@ -52,7 +52,9 @@ export default function Home({ heroTitle, posts }) {
                 className='rounded-md rounded-b-none'
               />
               <div className='bg-slate-300 dark:bg-slate-700 p-4 rounded-md rounded-t-none'>
-                <h2 className='font-extrabold'>{post.fields.title}</h2>
+                <h2 className='font-extrabold text-slate-800 dark:text-slate-100'>
+                  {post.fields.title}
+                </h2>
                 <div className='flex flex-wrap'>
                   {post.fields.disciplines.map((discipline, index) => (
                     <span

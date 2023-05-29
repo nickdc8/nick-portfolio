@@ -47,11 +47,13 @@ export default function Page({ title, content, pageContent }) {
       <Head>
         <title>{title}</title>
       </Head>
-      <h1 className='text-4xl font-bold mb-5'>{title}</h1>
-      <p className='dark:text-slate-200 text-2xl leading-relaxed body-text'>
+      <h1 className='text-4xl font-bold mb-5 text-slate-800 dark:text-slate-100'>
+        {title}
+      </h1>
+      <p className='text-slate-800 dark:text-slate-100 text-2xl leading-relaxed body-text'>
         {content}
       </p>
-      <div className='dark:text-slate-200 text-2xl leading-relaxed body-text'>
+      <div className='text-slate-800 dark:text-slate-100 text-2xl leading-relaxed body-text'>
         {documentToReactComponents(pageContent, options)}
       </div>
     </div>

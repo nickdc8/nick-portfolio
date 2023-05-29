@@ -55,8 +55,12 @@ export default function PostPage({
       </Head>
       <div className='md:flex mb-10 gap-8'>
         <div className='md:w-1/3'>
-          <div className='uppercase text-sm font-medium'>Client</div>
-          <h1 className='mb-2 text-xl font-bold'>{title}</h1>
+          <div className='uppercase text-sm font-medium text-slate-800 dark:text-slate-100'>
+            Client
+          </div>
+          <h1 className='mb-2 text-xl font-bold text-slate-800 dark:text-slate-100'>
+            {title}
+          </h1>
           <p>
             {disciplines.map((discipline) => (
               <span
@@ -69,7 +73,7 @@ export default function PostPage({
           </p>
           {weblink && <Button href={weblink} />}
         </div>
-        <div className='md:w-3/4 mt-8 md:mt-0 text-lg leading-relaxed'>
+        <div className='md:w-3/4 mt-8 md:mt-0 text-lg leading-relaxed text-slate-800 dark:text-slate-100'>
           {description}
         </div>
       </div>

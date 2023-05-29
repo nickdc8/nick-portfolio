@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  @apply bg-slate-100 dark:bg-slate-800;
+}
+
+
 .my-anchor-class {
   color: #64748b;
 }
@@ -29,19 +34,4 @@
   color: #94a3b8;
 }
 
-:root {
-  --background-color: #e2e8f0; /* slate-200 */
-  --foreground-color: #1e293b; /* slate-800 */
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background-color: #1e293b; /* slate-800 */
-    --foreground-color: #e2e8f0; /* slate-200 */
-  }
-}
-
-body {
-  background-color: var(--background-color);
-  color: var(--foreground-color);
-}

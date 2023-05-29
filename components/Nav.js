@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import ThemeToggle from './ThemeToggle';
 
 const Nav = () => {
   const router = useRouter();
@@ -10,7 +11,9 @@ const Nav = () => {
         <div className='flex justify-between h-16'>
           <div className='flex-shrink-0 flex items-center'>
             <Link legacyBehavior href='/' passHref>
-              <a className='text-5xl font-black dark:text-white'>N</a>
+              <a className='text-5xl font-black text-slate-900 dark:text-white'>
+                N
+              </a>
             </Link>
           </div>
           <div className='flex'>
@@ -39,6 +42,7 @@ const Nav = () => {
                   About
                 </Link>
               </li>
+              <ThemeToggle />
             </ul>
           </div>
         </div>
