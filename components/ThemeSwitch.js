@@ -1,44 +1,30 @@
 import { useState, useEffect } from 'react';
+import { useTheme } from 'next-themes';
 
-export default function ThemeToggle() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-  const [themeLoaded, setThemeLoaded] = useState(false);
+const ThemeSwitch = () => {
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
 
-  const retrieveThemeFromLocalStorage = () => {
-    const storedTheme = localStorage.getItem('theme');
-    setIsDarkMode(
-      storedTheme === 'dark' ||
-        (!storedTheme &&
-          window.matchMedia('(prefers-color-scheme: dark)').matches)
-    );
-  };
-
+  // useEffect only runs on the client, so now we can safely show the UI
   useEffect(() => {
-    retrieveThemeFromLocalStorage();
-    setThemeLoaded(true);
+    setMounted(true);
   }, []);
 
-  useEffect(() => {
-    if (themeLoaded) {
-      if (isDarkMode) {
-        document.documentElement.classList.add('dark');
-        localStorage.setItem('theme', 'dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-        localStorage.setItem('theme', 'light');
-      }
-    }
-  }, [isDarkMode, themeLoaded]);
+  if (!mounted) {
+    <div className='w-10 h-6 bg-gray-300 rounded animate-pulse' />;
+  }
+
+  const handleToggle = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark');
+  };
 
   return (
-    <label className={`swap swap-rotate ${themeLoaded ? 'loaded' : ''}`}>
-      {themeLoaded && (
-        <input
-          type='checkbox'
-          checked={isDarkMode}
-          onChange={() => setIsDarkMode(!isDarkMode)}
-        />
-      )}
+    <label className='swap swap-rotate'>
+      <input
+        type='checkbox'
+        checked={theme === 'dark'}
+        onChange={handleToggle}
+      />
       <svg
         className='swap-on fill-current w-6 h-6'
         xmlns='http://www.w3.org/2000/svg'
@@ -55,4 +41,6 @@ export default function ThemeToggle() {
       </svg>
     </label>
   );
-}
+};
+
+export default ThemeSwitch;

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import ThemeToggle from './ThemeToggle';
+import ThemeSwitch from './ThemeSwitch';
 
 const Nav = () => {
   const router = useRouter();
@@ -42,7 +42,7 @@ const Nav = () => {
                   About
                 </Link>
               </li>
-              <ThemeToggle />
+              <ThemeSwitch />
             </ul>
           </div>
         </div>
