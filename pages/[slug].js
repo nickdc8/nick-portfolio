@@ -33,10 +33,16 @@ export async function getStaticProps({ params }) {
 
   const page = res.items[0];
 
+  if (!page) {
+    return {
+      notFound: true,
+    };
+  }
+
   return {
     props: {
-      title: page.fields.title,
-      pageContent: page.fields.pageContent,
+      title: page.fields.title || '',
+      pageContent: page.fields.pageContent || '',
     },
   };
 }
