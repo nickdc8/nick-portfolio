@@ -1,5 +1,4 @@
-```markdown
-# NickDC8 - Personal Design and Frontend Developer Website
+# Personal Design and Frontend Developer Website
 
 ![Project Preview](https://github.com/nickdc8/nick-portfolio/assets/35410717/5045beea-c3b5-4db6-b1b2-889544cc165f)
 
@@ -51,5 +50,4 @@ This project is licensed under Creative Commons. Feel free to use and modify the
 
 ---
 
-*Note: The website is actively maintained, and I regularly update it with new projects.*
-```
+*Note: The website is actively maintained, and I regularly update it with new projects.
