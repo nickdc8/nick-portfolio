@@ -1,7 +1,6 @@
-```markdown
-# NickDC8 - Personal Design and Frontend Developer Website
+# Personal Design and Frontend Developer Website
 
-![Project Preview](https://github.com/nickdc8/nick-portfolio/assets/35410717/5045beea-c3b5-4db6-b1b2-889544cc165f)
+![Project Preview](https://github.com/nickdc8/nick-portfolio/blob/main/readme-image.png)
 
  This website showcases both my design work and frontend development projects. It was built using Next.js and powered by the Contentful CMS, making it a dynamic and interactive platform to share my work.
 
@@ -51,5 +50,4 @@ This project is licensed under Creative Commons. Feel free to use and modify the
 
 ---
 
-*Note: The website is actively maintained, and I regularly update it with new projects.*
-```
+*Note: The website is actively maintained, and I regularly update it with new projects.
