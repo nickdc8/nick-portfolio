@@ -21,8 +21,8 @@ const Nav = () => {
                 <Link
                   className={
                     router.pathname === '/'
-                      ? 'active'
-                      : 'text-slate-800 dark:text-slate-100 hover:text-slate-400'
+                      ? 'dark:text-slate-100 text-slate-800'
+                      : 'text-slate-400 dark:text-slate-400 hover:text-slate-600'
                   }
                   href='/'
                 >
@@ -33,8 +33,8 @@ const Nav = () => {
                 <Link
                   className={
                     router.pathname === '/[slug]'
-                      ? 'active'
-                      : 'text-slate-800 dark:text-slate-100 hover:text-slate-400'
+                      ? 'dark:text-slate-100 text-slate-800'
+                      : 'text-slate-400 dark:text-slate-400 hover:text-slate-600'
                   }
                   href='/about'
                 >
