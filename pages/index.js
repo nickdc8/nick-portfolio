@@ -1,6 +1,7 @@
 import { client } from '../lib/contentful';
 import Image from 'next/image';
 import Head from 'next/head';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 export async function getStaticProps() {
   const res = await client.getEntries({
@@ -44,7 +45,7 @@ export default function Home({ heroTitle, posts }) {
             key={post.sys.id}
           >
             <div>
-              <Image
+              <LazyLoadImage
                 src={`https:${post.fields.thumbnail.fields.file.url}`}
                 alt={post.fields.thumbnail.fields.title}
                 width={post.fields.thumbnail.fields.file.details.image.width}
