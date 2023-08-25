@@ -1,5 +1,5 @@
 import { client } from '../../lib/contentful';
-import Image from 'next/image';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import Head from 'next/head';
 import Button from '../../components/Button';
 
@@ -83,7 +83,7 @@ export default function PostPage({
         {gallery &&
           gallery.map((image) => (
             <div key={image.sys.id} className='px-4 mb-6'>
-              <Image
+              <LazyLoadImage
                 src={`https:${image.fields.file.url}`}
                 alt={image.fields.description || ''}
                 width={image.fields.file.details.image.width}

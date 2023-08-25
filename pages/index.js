@@ -1,5 +1,4 @@
 import { client } from '../lib/contentful';
-import Image from 'next/image';
 import Head from 'next/head';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
