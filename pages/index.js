@@ -1,6 +1,7 @@
 import { client } from '../lib/contentful';
 import Head from 'next/head';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import Link from 'next/link';
 
 export async function getStaticProps() {
   const res = await client.getEntries({
@@ -39,7 +40,7 @@ export default function Home({ heroTitle, posts }) {
       </div>
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12'>
         {posts.map((post) => (
-          <a
+          <Link
             href={`/posts/${encodeURIComponent(post.fields.slug)}`}
             key={post.sys.id}
           >
@@ -67,7 +68,7 @@ export default function Home({ heroTitle, posts }) {
                 </div>
               </div>
             </div>
-          </a>
+          </Link>
         ))}
       </div>
     </>

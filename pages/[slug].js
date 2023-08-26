@@ -2,14 +2,15 @@ import { client } from '../lib/contentful';
 import Head from 'next/head';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { INLINES } from '@contentful/rich-text-types';
+import Link from 'next/link';
 
 const options = {
   renderNode: {
     [INLINES.HYPERLINK]: (node, children) => {
       return (
-        <a href={node.data.uri} className='my-anchor-class'>
+        <Link href={node.data.uri} className='my-anchor-class'>
           {children}
-        </a>
+        </Link>
       );
     },
   },
