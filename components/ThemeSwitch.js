@@ -47,7 +47,10 @@ const ThemeSwitch = () => {
   return (
     <Listbox value={selected} onChange={handleToggle}>
       <div className='relative mt-1'>
-        <Listbox.Button className='relative w-[40px] cursor-pointer flex justify-center rounded-lg hover:bg-slate-200  dark:hover:bg-slate-900 py-2 focus:outline-none focus-visible:border-slate-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-300'>
+        <Listbox.Button
+          aria-label='Open Menu'
+          className='relative w-[40px] cursor-pointer flex justify-center rounded-lg hover:bg-slate-200  dark:hover:bg-slate-900 py-2 focus:outline-none focus-visible:border-slate-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-300'
+        >
           {selected.icon}
         </Listbox.Button>
         <Transition
