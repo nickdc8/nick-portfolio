@@ -6,7 +6,7 @@ const Nav = () => {
 
   return (
     <nav>
-      <div className='max-w-7xl mx-auto mt-10 '>
+      <div className='mx-auto mt-10 '>
         <div className='flex justify-between h-16'>
           <div className='flex-shrink-0 flex items-center'>
             <Link legacyBehavior href='/' passHref>
