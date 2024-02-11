@@ -54,13 +54,13 @@ export default function Page({ title, content, pageContent }) {
       <Head>
         <title>{title}</title>
       </Head>
-      <h1 className='text-4xl font-bold mb-5 text-slate-800 dark:text-slate-100'>
+      <h1 className='text-4xl font-bold mb-5 text-gray-800 dark:text-gray-100'>
         {title}
       </h1>
-      <p className='text-slate-800 dark:text-slate-100 text-2xl leading-relaxed body-text'>
+      <p className='text-gray-800 dark:text-gray-100 text-2xl leading-relaxed body-text'>
         {content}
       </p>
-      <div className='text-slate-800 dark:text-slate-100 text-2xl leading-relaxed body-text'>
+      <div className='text-gray-800 dark:text-gray-100 text-2xl leading-relaxed body-text'>
         {documentToReactComponents(pageContent, options)}
       </div>
     </div>

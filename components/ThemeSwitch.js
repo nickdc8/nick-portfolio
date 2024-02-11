@@ -41,7 +41,7 @@ const ThemeSwitch = () => {
   };
 
   if (!mounted) {
-    return <div className='w-10 h-6 bg-slate-800 rounded animate-pulse' />;
+    return <div className='w-10 h-6 bg-gray-800 rounded animate-pulse' />;
   }
 
   return (
@@ -49,7 +49,7 @@ const ThemeSwitch = () => {
       <div className='relative mt-1'>
         <Listbox.Button
           aria-label='Open Menu'
-          className='relative w-[40px] cursor-pointer flex justify-center rounded-lg hover:bg-slate-200  dark:hover:bg-slate-900 py-2 focus:outline-none focus-visible:border-slate-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-300'
+          className='relative w-[40px] cursor-pointer flex justify-center rounded-lg hover:bg-gray-200  dark:hover:bg-gray-900 py-2 focus:outline-none focus-visible:border-gray-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-300'
         >
           {selected.icon}
         </Listbox.Button>
@@ -60,7 +60,7 @@ const ThemeSwitch = () => {
           leaveTo='opacity-0'
         >
           <Listbox.Options
-            className='absolute mt-1 max-h-60 w-[180px] overflow-auto rounded-md bg-white dark:bg-slate-900 py-1 text-sm shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none right-0'
+            className='absolute mt-1 max-h-60 w-[180px] overflow-auto rounded-md bg-white dark:bg-gray-900 py-1 text-sm shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none right-0'
             style={{ top: 'calc(-100% - 0.5rem - 80px)' }}
           >
             {options.map((option) => (
@@ -68,7 +68,7 @@ const ThemeSwitch = () => {
                 key={option.id}
                 className={({ active }) =>
                   `relative cursor-pointer select-none py-2 pl-10 pr-4 ${
-                    active ? 'bg-slate-100 text-slate-900' : 'text-slate-400'
+                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-400'
                   }`
                 }
                 value={option}
@@ -86,7 +86,7 @@ const ThemeSwitch = () => {
                       {option.name}
                     </span>
                     {selected ? (
-                      <span className='absolute inset-y-0 left-0 flex items-center pl-3 text-slate-600'>
+                      <span className='absolute inset-y-0 left-0 flex items-center pl-3 text-gray-600'>
                         <HiCheck className='h-5 w-5' aria-hidden='true' />
                       </span>
                     ) : null}

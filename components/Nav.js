@@ -10,7 +10,7 @@ const Nav = () => {
         <div className='flex justify-between h-16'>
           <div className='flex-shrink-0 flex items-center'>
             <Link legacyBehavior href='/' passHref>
-              <a className='text-5xl font-black text-slate-900 dark:text-white'>
+              <a className='text-5xl font-black text-gray-900 dark:text-white'>
                 N
               </a>
             </Link>
@@ -21,8 +21,8 @@ const Nav = () => {
                 <Link
                   className={
                     router.pathname === '/'
-                      ? 'dark:text-slate-100 text-slate-800'
-                      : 'text-slate-400 dark:text-slate-400 hover:text-slate-600'
+                      ? 'dark:text-gray-100 text-gray-800'
+                      : 'text-gray-400 dark:text-gray-400 hover:text-gray-600'
                   }
                   href='/'
                 >
@@ -33,8 +33,8 @@ const Nav = () => {
                 <Link
                   className={
                     router.pathname === '/[slug]'
-                      ? 'dark:text-slate-100 text-slate-800'
-                      : 'text-slate-400 dark:text-slate-400 hover:text-slate-600'
+                      ? 'dark:text-gray-100 text-gray-800'
+                      : 'text-gray-400 dark:text-gray-400 hover:text-gray-600'
                   }
                   href='/about'
                 >

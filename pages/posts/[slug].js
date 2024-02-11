@@ -55,17 +55,17 @@ export default function PostPage({
       </Head>
       <div className='md:flex mb-10 gap-8'>
         <div className='md:w-1/3'>
-          <div className='uppercase text-sm font-medium text-slate-800 dark:text-slate-100'>
+          <div className='uppercase text-[11px] tracking-widest font-semibold text-gray-800 dark:text-gray-500'>
             Client
           </div>
-          <h1 className='mb-2 text-xl font-bold text-slate-800 dark:text-slate-100'>
+          <h1 className='mb-2 text-xl font-bold text-gray-800 dark:text-gray-100'>
             {title}
           </h1>
           <p>
             {disciplines.map((discipline) => (
               <span
                 key={discipline}
-                className='text-xs tracking-wide font-semibold uppercase text-slate-300 bg-gray-800 dark:bg-gray-900  px-2 py-1 rounded-md mr-2 mb-3'
+                className='text-xs tracking-wide font-semibold uppercase text-gray-300 bg-gray-800 dark:bg-gray-800  px-2 py-1 rounded-md mr-2 mb-3'
               >
                 {discipline}
               </span>
@@ -73,7 +73,7 @@ export default function PostPage({
           </p>
           {weblink && <Button href={weblink} />}
         </div>
-        <div className='md:w-3/4 mt-8 md:mt-0 text-lg leading-relaxed text-slate-800 dark:text-slate-100'>
+        <div className='md:w-3/4 mt-8 md:mt-0 text-lg leading-relaxed text-gray-800 dark:text-gray-100'>
           {description}
         </div>
       </div>

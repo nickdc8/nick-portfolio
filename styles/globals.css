@@ -3,9 +3,8 @@
 @tailwind utilities;
 
 body {
-  @apply bg-slate-100 dark:bg-slate-800;
+  @apply bg-gray-100 dark:bg-gray-900;
 }
-
 
 .my-anchor-class {
   color: #64748b;

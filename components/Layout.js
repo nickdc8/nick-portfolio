@@ -1,8 +1,8 @@
 import Nav from './Nav';
 import Footer from './Footer';
-import { Inter } from 'next/font/google';
+import { Work_Sans } from 'next/font/google';
 
-const inter = Inter({
+const inter = Work_Sans({
   subsets: ['latin'],
   variable: '--font-inter',
 });
