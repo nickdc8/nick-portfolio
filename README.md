@@ -6,7 +6,7 @@
 
 ## Visit the Website
 
-You can visit the live website at [https://nickdc8.com/](https://nickdc8.com/).
+You can visit the live website at [https://nickdc8.com/](https://nickdc.dev/).
 
 ## Technologies Used
 
